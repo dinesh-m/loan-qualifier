@@ -1,0 +1,50 @@
+  644  git push
+  645  git status
+  646  clear
+  647  python app.py 
+  648  python app.py 
+  649  clear
+  650  python app.py 
+  651  python app.py 
+  652  python app.py 
+  653  python app.py 
+  654  clear
+  655  git status
+  656  git add app.py 
+  657  git commit -m 'Validation checks added in the save_qualifying_loans function'
+  658  git push
+  659  git status
+  660  git pull
+  661  clear
+  662  python app.py 
+  663  clear
+  664  git status
+  665  git restore output/qualifying_loans.csv 
+  666  git status
+  667  git add app.py 
+  668  git commit -m 'Updated the questionary method from prompt to confirm.ask'
+  669  git push
+  670  git status
+  671  clear
+  672  python app.py 
+  673  python app.py 
+  674  python app.py 
+  675  python app.py 
+  676  clear
+  677  git status
+  678  git add output
+  679  git add output/qualifying_laons.csv
+  680  git add images
+  681  git add images/app_usage.png
+  682  clear
+  683  git status
+  684  git add app.py 
+  685  git add README.md 
+  686  clear
+  687  git status
+  688  git commit -m 'Updated README.md file and 'save-qualifying_loans' function as per acceptance criteria'
+  689  git status
+  690  git push
+  691  git status
+  692  clear
+  693  history 50 > terminal_history.txt

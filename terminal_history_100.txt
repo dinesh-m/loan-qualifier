@@ -1,0 +1,106 @@
+  595  cd Users\dinesh.m\Desktop\FinTech_Workspace\Module2\01_Loan_Qualifier_Financial_Calculations\Unsolved\
+  596  cd "Users\dinesh.m\Desktop\FinTech_Workspace\Module2\01_Loan_Qualifier_Financial_Calculations\Unsolved\"
+
+
+
+
+q
+
+  597  clear
+  598  cd Users/dinesh.m/Desktop/FinTech_Workspace/module2/01_Loan_Qualifier_Financial_Calculations/Unsolved/
+  599  clear
+  600  python app.py
+  601  cd f:
+  602  clear
+  603  cd Columbia-GitHub/loan_qualifier_app/
+  604  ls
+  605  clear
+  606  git --list
+  607  git global --list
+  608  git config --list
+  609  clear
+  610  git clone https://github.com/dinesh-m/loan-qualifier.git
+  611  git status
+  612  ls
+  613  cd loan-qualifier/
+  614  ls
+  615  clear
+  616  git status
+  617  git add -a
+  618  git add -all
+  619  git add --all
+  620  git status
+  621  git commit -m 'Adding the submission project files'
+  622  git status
+  623  git push
+  624  git push
+  625  git status
+  626  git pull
+  627  clear
+  628  ls
+  629  python app.py 
+  630  clear
+  631  python app.py 
+  632  python app.py 
+  633  python app.py 
+  634  clear
+  635  git status
+  636  git add app.py 
+  637  git add data/daily_rate_sheet.csv
+  638  git status
+  639  git commit -m 'Added save_csv function and output data folder'
+  640  git status
+  641  git add output/
+  642  git commit -m 'Adding output folder in the project'
+  643  git status
+  644  git push
+  645  git status
+  646  clear
+  647  python app.py 
+  648  python app.py 
+  649  clear
+  650  python app.py 
+  651  python app.py 
+  652  python app.py 
+  653  python app.py 
+  654  clear
+  655  git status
+  656  git add app.py 
+  657  git commit -m 'Validation checks added in the save_qualifying_loans function'
+  658  git push
+  659  git status
+  660  git pull
+  661  clear
+  662  python app.py 
+  663  clear
+  664  git status
+  665  git restore output/qualifying_loans.csv 
+  666  git status
+  667  git add app.py 
+  668  git commit -m 'Updated the questionary method from prompt to confirm.ask'
+  669  git push
+  670  git status
+  671  clear
+  672  python app.py 
+  673  python app.py 
+  674  python app.py 
+  675  python app.py 
+  676  clear
+  677  git status
+  678  git add output
+  679  git add output/qualifying_laons.csv
+  680  git add images
+  681  git add images/app_usage.png
+  682  clear
+  683  git status
+  684  git add app.py 
+  685  git add README.md 
+  686  clear
+  687  git status
+  688  git commit -m 'Updated README.md file and 'save-qualifying_loans' function as per acceptance criteria'
+  689  git status
+  690  git push
+  691  git status
+  692  clear
+  693  history 50 > terminal_history.txt
+  694  history 100 > terminal_history_100.txt
