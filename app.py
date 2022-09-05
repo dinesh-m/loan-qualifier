@@ -118,17 +118,11 @@ def save_qualifying_loans(qualifying_loans):
     if number_of_lenders < 1:
         sys.exit(f"Oops! Can't find the lender.")
 
-    # Prompt the user to save the loan qualifying list
-    question = [
-        {
-            "type": "confirm",
-            "name": "SaveCSV",
-            "message": "Would you like to save the qualifying loans list in a CSV file?",
-            "default": True,
-        }
-    ]
+    # Prompt the user to save the qualifying loans list
+    user_response = questionary.form(
+        SaveCSV = questionary.confirm("Would you like to save the qualifying loans list in a CSV file?", default=True)
+    ).ask()
 
-    user_response = questionary.prompt(question)
     answer = user_response.get('SaveCSV')
 
     # User wants to save the list
