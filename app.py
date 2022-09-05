@@ -109,14 +109,8 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    print(qualifying_loans)
-
+    # Number of lenders found in the qualifying loans list
     number_of_lenders = len(qualifying_loans)
-
-    # Check if there is any possible lender
-    if number_of_lenders < 1:
-        sys.exit(f"Oops! Can't find the lender.")
 
     # Prompt the user to save the qualifying loans list
     user_response = questionary.form(
@@ -125,6 +119,10 @@ def save_qualifying_loans(qualifying_loans):
 
     answer = user_response.get('SaveCSV')
 
+    # Check if there is any possible lender
+    if number_of_lenders < 1:
+        sys.exit(f"Oops! Can't find any possible lender based on your financial information.")
+    
     # User wants to save the list
     if answer == True:
         save_csv(qualifying_loans)
@@ -133,6 +131,7 @@ def save_qualifying_loans(qualifying_loans):
     
 def save_csv(qualifying_loans):
     """Saves the qualifying loans list to a CSV file.
+    
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
@@ -147,8 +146,8 @@ def save_csv(qualifying_loans):
     # Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate
     header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
 
-    # Use the csv library and `csv.writer` to write the header row
-    # and each row of `loan.values()` from the `qualifying_loans` list.
+    # Use the csv library and 'csv.writer' to write the header row
+    # and each row of 'loan' from the 'qualifying_loans' list.
 
     with open(output_path, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
@@ -157,6 +156,8 @@ def save_csv(qualifying_loans):
 
         for loan in qualifying_loans:
             csvwriter.writerow(loan)
+        
+        print(f"The CSV file {output_path.name} is saved at {output_path.absolute()} for your reference.")
 
 
 def run():
