@@ -10,6 +10,7 @@ import sys
 import fire
 import questionary
 from pathlib import Path
+import csv
 
 from qualifier.utils.fileio import load_csv
 
@@ -109,7 +110,35 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    print(qualifying_loans)
+    save_csv(qualifying_loans)
+    
+def save_csv(qualifying_loans):
+    """Saves the qualifying loans list to a CSV file.
+    Args:
+        qualifying_loans (list of lists): The qualifying bank loans.
+    """
+    
+    # Prompt the user where he/she wants to save the CSV output file
+    csv_path = questionary.text("Please, give the CSV file path where you want to save the output.").ask()
+    csv_path = csv_path.strip()
+    # Set the output file path
+    output_path = Path(csv_path)
+
+    # Set the output header
+    # Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate
+    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
+
+    # Use the csv library and `csv.writer` to write the header row
+    # and each row of `loan.values()` from the `qualifying_loans` list.
+
+    with open(output_path, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        # Inserting column headers in the csv file
+        csvwriter.writerow(header)
+
+        for loan in qualifying_loans:
+            csvwriter.writerow(loan)
 
 
 def run():
