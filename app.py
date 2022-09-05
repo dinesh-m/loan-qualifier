@@ -111,7 +111,31 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     print(qualifying_loans)
-    save_csv(qualifying_loans)
+
+    number_of_lenders = len(qualifying_loans)
+
+    # Check if there is any possible lender
+    if number_of_lenders < 1:
+        sys.exit(f"Oops! Can't find the lender.")
+
+    # Prompt the user to save the loan qualifying list
+    question = [
+        {
+            "type": "confirm",
+            "name": "SaveCSV",
+            "message": "Would you like to save the qualifying loans list in a CSV file?",
+            "default": True,
+        }
+    ]
+
+    user_response = questionary.prompt(question)
+    answer = user_response.get('SaveCSV')
+
+    # User wants to save the list
+    if answer == True:
+        save_csv(qualifying_loans)
+    else:
+        print("Thanks for checking the loan eligibility!")
     
 def save_csv(qualifying_loans):
     """Saves the qualifying loans list to a CSV file.
